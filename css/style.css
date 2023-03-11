@@ -25,28 +25,64 @@ body::-webkit-scrollbar {
 
 .contact {
   width: 100vw;
-  display: flex;
-  justify-content: space-between;
+  height: 30vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max-content, 50%));
   position: fixed;
-  bottom: 20%; }
+  bottom: 0%; }
   .contact__left {
-    width: 50%;
-    margin-left: 7rem; }
+    justify-self: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-left: 6rem; }
   .contact__style {
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 2rem; }
   .contact__icon {
-    height: 3rem;
-    width: 3rem;
-    fill: #e9ecef; }
+    height: 4rem;
+    width: 4rem;
+    fill: #e9ecef;
+    transition: all .5s; }
+    .contact__icon:hover {
+      transform: translateY(-0.8rem) scale(1.08);
+      fill: #1a083d;
+      background-color: #e9ecef;
+      border-radius: .8rem; }
+  .contact__right {
+    justify-self: end;
+    display: flex;
+    flex-direction: column;
+    gap: 12rem;
+    justify-content: center;
+    align-items: center; }
   .contact__gmail:link, .contact__gmail:visited {
+    padding: .5rem;
+    font-family: "Noto Rashi Hebrew", serif;
     line-height: 1;
     text-decoration: none;
     color: inherit;
+    display: inline-block;
     transform: rotate(270deg);
-    display: inline-block; }
+    margin-top: 8rem;
+    transition: all .8s; }
+    .contact__gmail:link:hover, .contact__gmail:visited:hover {
+      color: #100028;
+      transform: rotate(270deg) translateX(0.8rem);
+      background-color: #e9ecef;
+      border-radius: .8rem; }
+
+.line__left,
+.line__right {
+  width: 1px;
+  height: 100%;
+  background-color: #e9ecef; }
+
+.line__right {
+  height: 80%; }
 
 .header {
   width: 100vw;
@@ -55,5 +91,35 @@ body::-webkit-scrollbar {
   background-image: linear-gradient(to left top, #1a083d, #100028), url("../img/my_img2.jpg");
   background-size: cover;
   background-position: right; }
-  .header h1:first-child {
-    font-family: "Noto Rashi Hebrew", serif; }
+  .header__logo_box {
+    height: 10rem;
+    width: 10rem;
+    display: inline-block;
+    position: relative;
+    margin: 2rem;
+    cursor: pointer; }
+    .header__logo_box::before, .header__logo_box::after {
+      content: "";
+      display: inline-block;
+      height: 50%;
+      width: 50%;
+      position: absolute;
+      transition: all .3s, transform .3s .3s; }
+    .header__logo_box::before {
+      lop: 0;
+      left: 0;
+      border-left: 2px solid #00bfe7;
+      border-top: 2px solid #00bfe7; }
+    .header__logo_box::after {
+      right: 0;
+      bottom: 0;
+      border-right: 2px solid #00bfe7;
+      border-bottom: 2px solid #00bfe7; }
+    .header__logo_box:hover::before, .header__logo_box:hover::after {
+      width: 100%;
+      height: 100%;
+      transform: rotate(45deg); }
+  .header__logo {
+    width: 100%;
+    height: 100%;
+    padding: 1rem; }

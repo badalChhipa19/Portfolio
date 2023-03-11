@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch:sass": "node-sass sass/main.sass css/style.css"
+    "watch:sass": "node-sass sass/main.sass css/style.css -w"
   },
   "author": "Badal",
   "license": "ISC",

@@ -7,7 +7,7 @@
     <title>Badal.Portfolio</title>
     <!-- stylesheet -->
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/logo-1x.png" type="image/x-icon" />
     <!-- Script -->
     <script src="js/script.js" defer></script>
   </head>
@@ -37,17 +37,28 @@
               </svg>
             </a>
           </li>
-          <li class="contact__item">
-            <a href="" class="contact__link">
-              <svg class="contact__icon"></svg>
-            </a>
-          </li>
         </ul>
+        <div class="line__left"></div>
       </div>
       <div class="contact__right">
         <a href="#" class="contact__gmail">badalchhipa9@gmail.com</a>
+        <div class="line__right"></div>
       </div>
     </div>
-    <header class="header"></header>
+    <header class="header">
+      <div class="header__logo_box">
+        <picture>
+          <source
+            srcset="img/logo-small-1x.png 1x, img/logo-small-2x.png 2x"
+            media="(max-width:37.5em)"
+          />
+          <img
+            class="header__logo"
+            srcset="img/logo-1x.png 1x, img/logo-2x.png 2x"
+            alt="Logo"
+          />
+        </picture>
+      </div>
+    </header>
   </body>
 </html>
