@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600&family=Noto+Rashi+Hebrew:wght@200;300;400;600;700&display=swap");
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; }
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 1.6;
+  color: #e9ecef;
+  background-color: #100028;
+  width: 100vw;
+  height: 200vh;
+  overflow-x: hidden; }
+
+body::-webkit-scrollbar {
+  display: none; }
+
+.contact {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 20%; }
+  .contact__left {
+    width: 50%;
+    margin-left: 7rem; }
+  .contact__style {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; }
+  .contact__icon {
+    height: 3rem;
+    width: 3rem;
+    fill: #e9ecef; }
+  .contact__gmail:link, .contact__gmail:visited {
+    line-height: 1;
+    text-decoration: none;
+    color: inherit;
+    transform: rotate(270deg);
+    display: inline-block; }
+
+.header {
+  width: 100vw;
+  height: 100vh;
+  background-blend-mode: color;
+  background-image: linear-gradient(to left top, #1a083d, #100028), url("../img/my_img2.jpg");
+  background-size: cover;
+  background-position: right; }
+  .header h1:first-child {
+    font-family: "Noto Rashi Hebrew", serif; }
