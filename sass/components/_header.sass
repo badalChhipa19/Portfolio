@@ -1,19 +1,42 @@
 .header
   width: 100vw
-  height: 100vh
-
+  height: 55vw
+  padding: 3rem 0
   background-blend-mode: color
-  background-image: linear-gradient(to left top,$color-primary-light, $color-primary-main), url("../img/my_img2.jpg")
+  background-image: linear-gradient(to left top,$color-primary-2, $color-primary-1), url("../img/my_img2.jpg")
   background-size: cover
   background-position: right
   
+  // NAVIGATIONS---------
+  &__nav
+    display: flex
+    align-items: center
+    gap: 5rem
+    margin: 0 2rem
+    position: relative
+    cursor: pointer
+
+    &:hover .header__logo_box::before, &:hover .header__logo_box::after
+      width: 100%
+      height: 100%
+      transform: rotate(45deg)
+
+    &:hover .header__lists
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 5% 50%)
+      background-image: linear-gradient(to right, $color-primary-3 0%, $color-primary-3 80%, rgba($color-primary-3, .5 ) 85%, rgba($color-primary-3, .2 ) 90%, transparent)
+      opacity: 1
+      visibility: visible
+      margin-left: -6.6rem
+
+    &:hover  .header__link
+      color: $color-grey-light-1
+
+  // LOGO BOX-----
   &__logo_box
-    height: 10rem
-    width: 10rem
+    height: 8rem
+    width: 8rem
     display: inline-block
     position: relative
-    margin: 2rem
-    cursor: pointer
 
     &::before,
     &::after
@@ -27,22 +50,62 @@
     &::before
       lop: 0
       left: 0
-      border-left: 2px solid $color-primary-border
-      border-top: 2px solid $color-primary-border
+      border-left: 2px solid $color-primary-3
+      border-top: 2px solid $color-primary-3
     &::after
       right: 0
       bottom: 0
-      border-right: 2px solid $color-primary-border
-      border-bottom: 2px solid $color-primary-border
+      border-right: 2px solid $color-primary-3
+      border-bottom: 2px solid $color-primary-3
 
-    &:hover::before, &:hover::after
-      width: 100%
-      height: 100%
-      transform: rotate(45deg)
 
   &__logo
     width: 100%
     height: 100%
     padding: 1rem
     
-      
+  // LINKS----------
+  &__lists
+    list-style: none
+    display: flex
+    gap: 3rem
+    padding: 2rem 7rem
+    padding-right: 10rem
+    margin-left: 100rem
+    position: relative
+    opacity: 0
+    visibility: hidden
+    transition: all .6s ease-in-out .6s
+    
+
+  &__link
+    &:link,
+    &:visited
+      font-family: $font-secondary
+      text-transform: uppercase
+      text-decoration: none
+      color: transparent
+      font-size: 2rem
+      transition: all .6s 
+
+  // HEADER CONTENT-------------
+  &__content
+    padding-left: 20%
+    // background-color: #fff
+    position: relative
+
+  &__greet
+    padding: 1.5rem 2rem
+    font-size: 12rem
+    font-family: $font-tertiary
+    text-transform: uppercase
+    color: transparent
+    background-image: linear-gradient(to right bottom, $color-primary-3, $color-primary-4)
+    background-clip: text
+    -webkit-background-clip: text
+    display: flex
+    cursor: context-menu
+
+.header__greets
+  margin-top: -50rem
+  transition: all 3s
