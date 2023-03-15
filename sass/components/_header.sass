@@ -2,8 +2,8 @@
   width: 100vw
   height: 55vw
   padding: 3rem 0
-  background-blend-mode: color
-  background-image: linear-gradient(to left top,$color-primary-2, $color-primary-1), url("../img/my_img2.jpg")
+  background-blend-mode: hard-light
+  background-image: linear-gradient(to right bottom, $color-primary-1 , $color-primary-4), url("../img/my_img2.jpg")
   background-size: cover
   background-position: right
   
@@ -33,8 +33,8 @@
 
   // LOGO BOX-----
   &__logo_box
-    height: 8rem
-    width: 8rem
+    height: 5vw
+    width: 5vw
     display: inline-block
     position: relative
 
@@ -45,7 +45,7 @@
       height: 50%
       width: 50%
       position: absolute
-      transition: all .3s, transform .3s .3s
+      transition: all .2s, transform .2s .2s
 
     &::before
       lop: 0
@@ -75,7 +75,7 @@
     position: relative
     opacity: 0
     visibility: hidden
-    transition: all .6s ease-in-out .6s
+    transition: all .2s ease-in-out .4s
     
 
   &__link
@@ -86,26 +86,61 @@
       text-decoration: none
       color: transparent
       font-size: 2rem
-      transition: all .6s 
+      transition: all .4s 
 
   // HEADER CONTENT-------------
   &__content
-    padding-left: 20%
-    // background-color: #fff
-    position: relative
-
-  &__greet
-    padding: 1.5rem 2rem
-    font-size: 12rem
-    font-family: $font-tertiary
     text-transform: uppercase
-    color: transparent
-    background-image: linear-gradient(to right bottom, $color-primary-3, $color-primary-4)
+    display: flex
+    flex-direction: column
+    justify-content: center
+    padding: 10% 0 0 20%;
+    background-image: radial-gradient($color-primary-3, $color-primary-3, $color-primary-4)
     background-clip: text
     -webkit-background-clip: text
-    display: flex
-    cursor: context-menu
+    font-weight: 900
+    
+    h1
+      color: transparent
+      font-size: 8rem
 
-.header__greets
-  margin-top: -50rem
-  transition: all 3s
+
+  &__greet
+    color: transparent
+    font-size: 3rem
+    margin-bottom: 3rem
+    font-weight: 400
+
+  &__sepcel
+    color: transparent
+    font-size: 3rem
+    margin-top: 1rem
+
+  &__about
+    display: inline-block
+    list-style: none
+    margin: 5% 0 0 20%
+    padding: 2%
+    color: $color-primary-4
+    font-weight: bold
+    width: max-content
+    backdrop-filter: grayscale(1) 
+    box-shadow: 0 0 8rem $color-grey-dark-2    
+
+  // ABOUT PART
+  // &__detail
+  //   display: flex
+  //   align-items: center
+  //   justify-content: flex-start
+  //   gap: 2rem
+  //   transition: all .3s
+
+
+  //   .value
+  //     font-size: 3rem
+  //     cursor: context-menu
+  //     display: inline-block
+
+
+  //   [name$="outline"]
+  //     font-size: 4rem

@@ -10,6 +10,15 @@
     <link rel="shortcut icon" href="img/logo-1x.png" type="image/x-icon" />
     <!-- Script -->
     <script src="js/script.js" defer></script>
+    <!-- ICONST -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
   </head>
   <body>
     <!-- Contact Links -->
@@ -18,23 +27,17 @@
         <ul class="contact__style">
           <li class="contact__item">
             <a href="#" class="contact__link">
-              <svg class="contact__icon">
-                <use xlink:href="img/sprite.svg#icon-github"></use>
-              </svg>
+              <ion-icon class="contact__icon" name="logo-github"></ion-icon>
             </a>
           </li>
           <li class="contact__item">
             <a href="" class="contact__link">
-              <svg class="contact__icon">
-                <use xlink:href="img/sprite.svg#icon-linkedin"></use>
-              </svg>
+              <ion-icon class="contact__icon" name="logo-linkedin"></ion-icon>
             </a>
           </li>
           <li class="contact__item">
             <a href="" class="contact__link">
-              <svg class="contact__icon">
-                <use xlink:href="img/sprite.svg#icon-instagram"></use>
-              </svg>
+              <ion-icon class="contact__icon" name="logo-instagram"></ion-icon>
             </a>
           </li>
         </ul>
@@ -81,19 +84,28 @@
       </div>
 
       <div class="header__content">
-        <h1 class="header__greet">
-          <span class="header__greets header__greet--1">h</span
-          ><span class="header__greets header__greet--2">e</span
-          ><span class="header__greets header__greet--3">y</span
-          ><span class="header__greets header__greet--4">.</span
-          ><span class="header__greets header__greet--5">.</span
-          ><span class="header__greets header__greet--6">!</span>
-        </h1>
+        <p class="header__greet">HELLO EVERYBODY, I AM</p>
+        <h1 class="heading__primary">Badal Chhipa</h1>
+        <p class="header__sepcel">Full Stack Developer</p>
       </div>
+      <!-- <ul class="header__about">
+        <li class="header__detail">
+          <ion-icon name="calendar-number-outline"></ion-icon>
+          <p class="value">31-10-2000</p>
+        </li>
+        <li class="header__detail">
+          <ion-icon name="call-outline"></ion-icon>
+          <p class="value">+91 8386863919</p>
+        </li>
+        <li class="header__detail">
+          <ion-icon name="home-outline"></ion-icon>
+          <h1 class="value">Jaipur, rajasthan</h1>
+        </li>
+      </ul> -->
     </header>
 
-    <section class="about">
-      <div class="div section__hide"></div>
+    <section class="about section__hide">
+      <div class="div"></div>
     </section>
   </body>
 </html>

@@ -15,7 +15,7 @@ body {
   font-size: 1.6rem;
   letter-spacing: 1.6;
   color: #e9ecef;
-  background-color: #100028;
+  background-color: #222326;
   width: 100vw;
   height: 200vh;
   overflow-x: hidden; }
@@ -28,7 +28,7 @@ body::-webkit-scrollbar {
   text-transform: uppercase;
   font-family: "Noto Rashi Hebrew", serif;
   font-size: 6rem;
-  letter-spacing: .5rem; }
+  text-transform: uppercase; }
 
 .section__hide {
   display: none;
@@ -60,7 +60,7 @@ body::-webkit-scrollbar {
     transition: all .5s; }
     .contact__icon:hover {
       transform: translateY(-0.8rem) scale(1.08);
-      fill: #100028;
+      fill: #222326;
       background-color: #e9ecef;
       border-radius: .8rem; }
   .contact__right {
@@ -81,7 +81,7 @@ body::-webkit-scrollbar {
     margin-top: 8rem;
     transition: all .8s; }
     .contact__gmail:link:hover, .contact__gmail:visited:hover {
-      color: #100028;
+      color: #222326;
       transform: rotate(270deg) translateX(0.8rem);
       background-color: #e9ecef;
       border-radius: .8rem; }
@@ -99,8 +99,8 @@ body::-webkit-scrollbar {
   width: 100vw;
   height: 55vw;
   padding: 3rem 0;
-  background-blend-mode: color;
-  background-image: linear-gradient(to left top, #1a083d, #100028), url("../img/my_img2.jpg");
+  background-blend-mode: hard-light;
+  background-image: linear-gradient(to right bottom, #222326, #594539), url("../img/my_img2.jpg");
   background-size: cover;
   background-position: right; }
   .header__nav {
@@ -116,15 +116,15 @@ body::-webkit-scrollbar {
       transform: rotate(45deg); }
     .header__nav:hover .header__lists {
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 5% 50%);
-      background-image: linear-gradient(to right, #766dff 0%, #766dff 80%, rgba(118, 109, 255, 0.5) 85%, rgba(118, 109, 255, 0.2) 90%, transparent);
+      background-image: linear-gradient(to right, #8C5B3F 0%, #8C5B3F 80%, rgba(140, 91, 63, 0.5) 85%, rgba(140, 91, 63, 0.2) 90%, transparent);
       opacity: 1;
       visibility: visible;
       margin-left: -6.6rem; }
     .header__nav:hover .header__link {
       color: #e9ecef; }
   .header__logo_box {
-    height: 8rem;
-    width: 8rem;
+    height: 5vw;
+    width: 5vw;
     display: inline-block;
     position: relative; }
     .header__logo_box::before, .header__logo_box::after {
@@ -133,17 +133,17 @@ body::-webkit-scrollbar {
       height: 50%;
       width: 50%;
       position: absolute;
-      transition: all .3s, transform .3s .3s; }
+      transition: all .2s, transform .2s .2s; }
     .header__logo_box::before {
       lop: 0;
       left: 0;
-      border-left: 2px solid #766dff;
-      border-top: 2px solid #766dff; }
+      border-left: 2px solid #8C5B3F;
+      border-top: 2px solid #8C5B3F; }
     .header__logo_box::after {
       right: 0;
       bottom: 0;
-      border-right: 2px solid #766dff;
-      border-bottom: 2px solid #766dff; }
+      border-right: 2px solid #8C5B3F;
+      border-bottom: 2px solid #8C5B3F; }
   .header__logo {
     width: 100%;
     height: 100%;
@@ -158,32 +158,46 @@ body::-webkit-scrollbar {
     position: relative;
     opacity: 0;
     visibility: hidden;
-    transition: all .6s ease-in-out .6s; }
+    transition: all .2s ease-in-out .4s; }
   .header__link:link, .header__link:visited {
     font-family: "Noto Rashi Hebrew", serif;
     text-transform: uppercase;
     text-decoration: none;
     color: transparent;
     font-size: 2rem;
-    transition: all .6s; }
+    transition: all .4s; }
   .header__content {
-    padding-left: 20%;
-    position: relative; }
-  .header__greet {
-    padding: 1.5rem 2rem;
-    font-size: 12rem;
-    font-family: "Rampart One", cursive;
     text-transform: uppercase;
-    color: transparent;
-    background-image: linear-gradient(to right bottom, #766dff, #88f3ff);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10% 0 0 20%;
+    background-image: radial-gradient(#8C5B3F, #8C5B3F, #594539);
     background-clip: text;
     -webkit-background-clip: text;
-    display: flex;
-    cursor: context-menu; }
-
-.header__greets {
-  margin-top: -50rem;
-  transition: all 3s; }
+    font-weight: 900; }
+    .header__content h1 {
+      color: transparent;
+      font-size: 8rem; }
+  .header__greet {
+    color: transparent;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    font-weight: 400; }
+  .header__sepcel {
+    color: transparent;
+    font-size: 3rem;
+    margin-top: 1rem; }
+  .header__about {
+    display: inline-block;
+    list-style: none;
+    margin: 5% 0 0 20%;
+    padding: 2%;
+    color: #594539;
+    font-weight: bold;
+    width: max-content;
+    backdrop-filter: grayscale(1);
+    box-shadow: 0 0 8rem #343a40; }
 
 .about {
   padding: 10rem 5rem; }
