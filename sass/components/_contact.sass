@@ -1,19 +1,15 @@
 .contact
   width: 100vw
   height: 30vh
-  display: grid
-  grid-template-columns: repeat(auto-fit, minmax(max-content, 50%))
-  position: fixed
-  bottom: 0%
 
   // LEft side
   &__left
-    justify-self: start
     display: flex
     flex-direction: column
     align-items: center
-    gap: 2rem
-    margin-left: 6rem
+    position: fixed
+    left: 4%
+    bottom: 0%
 
 
   &__style
@@ -36,24 +32,25 @@
 
   // Right Side
   &__right    
-    justify-self: end
     display: flex
     flex-direction: column
-    gap: 12rem
-    justify-content: center
     align-items: center
+    gap: 12rem
+    position: fixed
+    right: -1%
+    bottom: 0%
 
   &__gmail
     &:link,
     &:visited
       padding: .5rem
+      font-size: 2rem
       font-family: $font-secondary
       line-height: 1
       text-decoration: none
       color: inherit
       display: inline-block
       transform: rotate(270deg) 
-      margin-top: 8rem
       transition: all .8s
 
       &:hover
@@ -65,9 +62,9 @@
 .line__left,
 .line__right
   width: 1px
-  height: 100%
+  height: 10rem
   background-color: $color-grey-light-1
 
 .line__right
-  height: 80%
+  height: 10rem
   

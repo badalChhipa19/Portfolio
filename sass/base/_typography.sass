@@ -4,3 +4,20 @@
   font-family: $font-secondary
   font-size: 6rem
   text-transform: uppercase
+
+.heading__secondary
+  font-size: 4rem
+  font-family: $font-secondary
+  letter-spacing: .4rem
+  text-transform: uppercase
+  &--light
+    background-image: linear-gradient($color-primary-3, $color-primary-5)
+    background-clip: text
+    -webkit-background-clip: text
+    color: transparent
+  
+  &--dark
+    background-image: linear-gradient($color-primary-1, $color-primary-2)
+    background-clip: text
+    -webkit-background-clip: text
+    color: transparent

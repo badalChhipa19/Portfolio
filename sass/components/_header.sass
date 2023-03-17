@@ -3,7 +3,7 @@
   height: 55vw
   padding: 3rem 0
   background-blend-mode: hard-light
-  background-image: linear-gradient(to right bottom, $color-primary-1 , $color-primary-4), url("../img/my_img2.jpg")
+  background-image: linear-gradient(to right top, $color-primary-1 , $color-primary-4), url("../img/my_img2.jpg")
   background-size: cover
   background-position: right
   
@@ -22,11 +22,11 @@
       transform: rotate(45deg)
 
     &:hover .header__lists
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 5% 50%)
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 6% 50%)
       background-image: linear-gradient(to right, $color-primary-3 0%, $color-primary-3 80%, rgba($color-primary-3, .5 ) 85%, rgba($color-primary-3, .2 ) 90%, transparent)
       opacity: 1
       visibility: visible
-      margin-left: -6.6rem
+      margin-left: -7.5rem
 
     &:hover  .header__link
       color: $color-grey-light-1
@@ -41,7 +41,7 @@
     &::before,
     &::after
       content: ""
-      display: inline-block
+      // display: inline-block
       height: 50%
       width: 50%
       position: absolute
