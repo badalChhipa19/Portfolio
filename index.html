@@ -7,7 +7,7 @@
     <title>Badal.Portfolio</title>
     <!-- stylesheet -->
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="shortcut icon" href="img/logo-1x.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/logo-1x.png" type="image/x-icon/png" />
     <!-- Script -->
     <script src="js/script.js" defer></script>
     <!-- ICONST -->
@@ -21,6 +21,7 @@
     ></script>
   </head>
   <body>
+    <div id="top"></div>
     <!-- Contact Links -->
     <div class="contact__left">
       <ul class="contact__style">
@@ -46,13 +47,24 @@
       <a href="#" class="contact__gmail">badalchhipa9@gmail.com</a>
       <div class="line__right"></div>
     </div>
+    <!-- Go to TOP -->
+    <a href="#top" class="up__arr">
+      <ion-icon name="chevron-up-outline"></ion-icon
+      ><ion-icon name="chevron-up-outline"></ion-icon
+      ><ion-icon name="chevron-up-outline"></ion-icon>
+    </a>
 
     <!-- HEADER SECTION -->
     <header class="header">
       <div class="header__nav">
         <!-- LOGO -->
         <div class="header__logo_box">
-          <picture>
+          <img
+            class="header__logo"
+            srcset="img/logo-1x.png 1x, img/logo-2x.png 2x"
+            alt="Logo"
+          />
+          <!-- <picture>
             <source
               srcset="img/logo-small-1x.png 1x, img/logo-small-2x.png 2x"
               media="(max-width:37.5em)"
@@ -62,7 +74,7 @@
               srcset="img/logo-1x.png 1x, img/logo-2x.png 2x"
               alt="Logo"
             />
-          </picture>
+          </picture> -->
         </div>
         <!-- LINKS -->
         <ul class="header__lists">
@@ -86,22 +98,8 @@
         <h1 class="heading__primary">Badal Chhipa</h1>
         <p class="header__sepcel">Full Stack Developer</p>
       </div>
-      <!-- <ul class="header__about">
-        <li class="header__detail">
-          <ion-icon name="calendar-number-outline"></ion-icon>
-          <p class="value">31-10-2000</p>
-        </li>
-        <li class="header__detail">
-          <ion-icon name="call-outline"></ion-icon>
-          <p class="value">+91 8386863919</p>
-        </li>
-        <li class="header__detail">
-          <ion-icon name="home-outline"></ion-icon>
-          <h1 class="value">Jaipur, rajasthan</h1>
-        </li>
-      </ul> -->
     </header>
-
+    <!-- ABOUT SECTION -->
     <section class="section">
       <div class="about">
         <h2 class="heading__secondary heading__secondary--light u__mb_mid">
@@ -109,7 +107,7 @@
         </h2>
         <p class="about__text">
           Hey! My name is <span>Badal Chhipa</span>. I am a full-stack
-          developer, and I'm very passoinate about my wark. I have acquiredthe
+          developer, and I'm very passoinate about my wark. I have acquired the
           skills and knowledge necessary to make a project sucess. I have
           experience in developing and deploying website utilizing various
           packages. I enjoy to learn new skills and technology in programing
@@ -119,8 +117,8 @@
         </p>
       </div>
     </section>
-
-    <section class="section section__skill" id="skill__Section">
+    <!-- SECTION SKILLS -->
+    <section class="section" id="skill__Section">
       <h2 class="heading__secondary heading__secondary--light">Skills</h2>
       <div class="skill">
         <div class="skill__main">
@@ -175,13 +173,3 @@
     </section>
   </body>
 </html>
-<!-- SVG -->
-<!-- <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-  <defs>
-     <linearGradient id="GradientColor">
-        <stop offset="0%" stop-color="#e91e63" />
-        <stop offset="100%" stop-color="#673ab7" />
-     </linearGradient>
-  </defs>
-  <circle cx="80" cy="80" r="70" stroke-linecap="round" />
-</svg> -->

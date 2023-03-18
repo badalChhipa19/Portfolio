@@ -1,7 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600&family=Noto+Rashi+Hebrew:wght@200;300;400;600;700&display=swap&family=Rampart+One&display=swap");
+@keyframes go-to-top {
+  10% {
+    transform: translate(50%, -25%); }
+  20% {
+    transform: translate(50%, 0%); }
+  30% {
+    transform: translate(50%, -20%); }
+  40% {
+    transform: translate(50%, 0%); }
+  50% {
+    transform: translate(50%, -15%); }
+  60% {
+    transform: translate(50%, 0%); }
+  70% {
+    transform: translate(50%, -10%); }
+  80% {
+    transform: translate(50%, 0%); }
+  90% {
+    transform: translate(50%, -5%); }
+  100% {
+    transform: translate(50%, 0%); } }
+
 html {
   font-size: 62.5%;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  scroll-behavior: smooth; }
 
 *,
 *::after,
@@ -17,7 +40,8 @@ body {
   color: #e9ecef;
   background-color: #222326;
   width: 100vw;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  position: relative; }
 
 .section {
   padding: 12rem 18rem; }
@@ -38,7 +62,7 @@ body::-webkit-scrollbar {
   letter-spacing: .4rem;
   text-transform: uppercase; }
   .heading__secondary--light {
-    background-image: linear-gradient(#8C5B3F, #735645);
+    background-image: linear-gradient(#8c5b3f, #735645);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent; }
@@ -70,7 +94,7 @@ body::-webkit-scrollbar {
     position: relative;
     padding: 6rem; }
     .about__text span {
-      color: #8C5B3F; }
+      color: #8c5b3f; }
     .about__text::after, .about__text::before {
       content: "";
       width: 50%;
@@ -81,13 +105,13 @@ body::-webkit-scrollbar {
     .about__text::before {
       top: 0;
       left: 0;
-      border-left: 2px solid #8C5B3F;
-      border-top: 2px solid #8C5B3F; }
+      border-left: 2px solid #8c5b3f;
+      border-top: 2px solid #8c5b3f; }
     .about__text::after {
       bottom: 0;
       right: 0;
-      border-right: 2px solid #8C5B3F;
-      border-bottom: 2px solid #8C5B3F; }
+      border-right: 2px solid #8c5b3f;
+      border-bottom: 2px solid #8c5b3f; }
     .about__text:hover::before, .about__text:hover::after {
       width: 100%;
       height: 100%; }
@@ -99,7 +123,7 @@ body::-webkit-scrollbar {
   padding: 0rem 2rem;
   box-shadow: 0 3px 0.8rem #3B3C40; }
   .btn--3 {
-    background-color: #8C5B3F; }
+    background-color: #8c5b3f; }
   .btn:hover {
     box-shadow: 0 0.6rem 1.6rem #3B3C40;
     transform: translateY(-0.1rem); }
@@ -107,68 +131,9 @@ body::-webkit-scrollbar {
     box-shadow: 0 0.3rem 0.8rem #3B3C40;
     transform: translateY(0); }
 
-.contact {
-  width: 100vw;
-  height: 30vh; }
-  .contact__left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: fixed;
-    left: 4%;
-    bottom: 0%; }
-  .contact__style {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem; }
-  .contact__icon {
-    height: 4rem;
-    width: 4rem;
-    fill: #e9ecef;
-    transition: all .5s; }
-    .contact__icon:hover {
-      transform: translateY(-0.8rem) scale(1.08);
-      fill: #222326;
-      background-color: #e9ecef;
-      border-radius: .8rem; }
-  .contact__right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12rem;
-    position: fixed;
-    right: -1%;
-    bottom: 0%; }
-  .contact__gmail:link, .contact__gmail:visited {
-    padding: .5rem;
-    font-size: 2rem;
-    font-family: "Noto Rashi Hebrew", serif;
-    line-height: 1;
-    text-decoration: none;
-    color: inherit;
-    display: inline-block;
-    transform: rotate(270deg);
-    transition: all .8s; }
-    .contact__gmail:link:hover, .contact__gmail:visited:hover {
-      color: #222326;
-      transform: rotate(270deg) translateX(0.8rem);
-      background-color: #e9ecef;
-      border-radius: .8rem; }
-
-.line__left,
-.line__right {
-  width: 1px;
-  height: 10rem;
-  background-color: #e9ecef; }
-
-.line__right {
-  height: 10rem; }
-
 .header {
   width: 100vw;
   height: 55vw;
-  padding: 3rem 0;
   background-blend-mode: hard-light;
   background-image: linear-gradient(to right top, #222326, #594539), url("../img/my_img2.jpg");
   background-size: cover;
@@ -176,27 +141,28 @@ body::-webkit-scrollbar {
   .header__nav {
     display: flex;
     align-items: center;
-    gap: 5rem;
-    margin: 0 2rem;
     position: relative;
-    cursor: pointer; }
+    cursor: pointer;
+    padding: 1.5rem 1.5rem; }
     .header__nav:hover .header__logo_box::before, .header__nav:hover .header__logo_box::after {
       width: 100%;
       height: 100%;
       transform: rotate(45deg); }
     .header__nav:hover .header__lists {
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 6% 50%);
-      background-image: linear-gradient(to right, #8C5B3F 0%, #8C5B3F 80%, rgba(140, 91, 63, 0.5) 85%, rgba(140, 91, 63, 0.2) 90%, transparent);
+      background-image: linear-gradient(to right, #8c5b3f 0%, #8c5b3f 80%, rgba(140, 91, 63, 0.5) 85%, rgba(140, 91, 63, 0.2) 90%, transparent);
       opacity: 1;
       visibility: visible;
-      margin-left: -7.5rem; }
+      margin-left: -2.3rem;
+      flex-grow: 0; }
     .header__nav:hover .header__link {
       color: #e9ecef; }
   .header__logo_box {
-    height: 5vw;
-    width: 5vw;
+    height: 4vw;
+    width: 4vw;
     display: inline-block;
-    position: relative; }
+    position: relative;
+    flex-shrink: 0; }
     .header__logo_box::before, .header__logo_box::after {
       content: "";
       height: 50%;
@@ -204,15 +170,15 @@ body::-webkit-scrollbar {
       position: absolute;
       transition: all .2s, transform .2s .2s; }
     .header__logo_box::before {
-      lop: 0;
+      top: 0;
       left: 0;
-      border-left: 2px solid #8C5B3F;
-      border-top: 2px solid #8C5B3F; }
+      border-left: 2px solid #8c5b3f;
+      border-top: 2px solid #8c5b3f; }
     .header__logo_box::after {
       right: 0;
       bottom: 0;
-      border-right: 2px solid #8C5B3F;
-      border-bottom: 2px solid #8C5B3F; }
+      border-right: 2px solid #8c5b3f;
+      border-bottom: 2px solid #8c5b3f; }
   .header__logo {
     width: 100%;
     height: 100%;
@@ -221,10 +187,11 @@ body::-webkit-scrollbar {
     list-style: none;
     display: flex;
     gap: 3rem;
-    padding: 2rem 7rem;
+    padding: 1.5rem 7rem;
     padding-right: 10rem;
-    margin-left: 100rem;
     position: relative;
+    flex-grow: 1;
+    margin-left: 50%;
     opacity: 0;
     visibility: hidden;
     transition: all .2s ease-in-out .4s; }
@@ -232,7 +199,7 @@ body::-webkit-scrollbar {
     font-family: "Noto Rashi Hebrew", serif;
     text-transform: uppercase;
     text-decoration: none;
-    color: transparent;
+    color: #000;
     font-size: 2rem;
     transition: all .4s; }
   .header__content {
@@ -241,7 +208,7 @@ body::-webkit-scrollbar {
     flex-direction: column;
     justify-content: center;
     padding: 10% 0 0 20%;
-    background-image: radial-gradient(#8C5B3F, #8C5B3F, #594539);
+    background-image: radial-gradient(#8c5b3f, #8c5b3f, #594539);
     background-clip: text;
     -webkit-background-clip: text;
     font-weight: 900; }
@@ -288,7 +255,7 @@ body::-webkit-scrollbar {
     width: 99.9%;
     border-radius: 50%;
     background-color: #212529;
-    box-shadow: 2px 2px 4px #8C5B3F, -4px -4px 6px #594539; }
+    box-shadow: 2px 2px 4px #8c5b3f, -4px -4px 6px #594539; }
   .skill__graph {
     display: flex;
     justify-content: center;
@@ -302,14 +269,90 @@ body::-webkit-scrollbar {
     justify-content: center;
     font-size: 3.2rem;
     font-weight: bolder;
-    width: 85%;
-    height: 85%;
+    width: 80%;
+    height: 80%;
     border-radius: 50%;
     background-color: #222326;
     color: #e9ecef;
-    box-shadow: inset 2px 2px 4px #8C5B3F, inset -4px -4px 6px #594539; }
+    box-shadow: inset 2px 2px 4px #8c5b3f, inset -4px -4px 6px #594539; }
   .skill__name {
     font-size: 2.4rem;
     font-family: "Noto Rashi Hebrew", serif;
     font-weight: 600;
     color: #e9ecef; }
+
+.contact {
+  width: 100vw;
+  height: 30vh; }
+  .contact__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left: 4%;
+    bottom: 0%; }
+  .contact__style {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; }
+  .contact__icon {
+    height: 4rem;
+    width: 4rem;
+    fill: #e9ecef;
+    transition: all .5s; }
+    .contact__icon:hover {
+      transform: translateY(-0.8rem) scale(1.08);
+      fill: #222326;
+      background-color: #e9ecef;
+      border-radius: .8rem; }
+  .contact__right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12rem;
+    position: fixed;
+    right: -1%;
+    bottom: 0%; }
+  .contact__gmail:link, .contact__gmail:visited {
+    padding: .5rem;
+    font-size: 2rem;
+    font-family: "Noto Rashi Hebrew", serif;
+    line-height: 1;
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    transform: rotate(270deg);
+    transition: all .5s; }
+    .contact__gmail:link:hover, .contact__gmail:visited:hover {
+      color: #222326;
+      transform: rotate(270deg) translateX(0.8rem);
+      background-color: #e9ecef;
+      border-radius: .8rem; }
+
+.line__left,
+.line__right {
+  width: 1px;
+  height: 10rem;
+  background-color: #e9ecef; }
+
+.line__right {
+  height: 10rem; }
+
+.up__arr:link, .up__arr:visited {
+  font-size: 3rem;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 0%;
+  right: 5.7%;
+  transform: translateX(50%);
+  cursor: pointer;
+  z-index: -1;
+  color: #ced4da; }
+
+.up__arr:hover {
+  animation: go-to-top 1s; }
+
+.up__arr ion-icon:not(:first-child) {
+  margin-top: -1rem; }

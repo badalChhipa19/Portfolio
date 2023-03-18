@@ -51,7 +51,7 @@
       color: inherit
       display: inline-block
       transform: rotate(270deg) 
-      transition: all .8s
+      transition: all .5s
 
       &:hover
         color: $color-primary-1
@@ -68,3 +68,23 @@
 .line__right
   height: 10rem
   
+.up__arr
+  &:link,
+  &:visited
+    font-size: 3rem
+    display: flex
+    flex-direction: column
+    position: fixed
+    bottom: 0%
+    right: 5.7%
+    transform: translateX(50%)
+    cursor: pointer
+    z-index: -1
+    color: $color-grey-light-2
+
+  &:hover
+    animation: go-to-top 1s
+
+  ion-icon:not(:first-child)
+    margin-top: -1rem
+
