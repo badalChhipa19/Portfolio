@@ -7,6 +7,10 @@ const skillGraph = document.querySelectorAll(".skill__graph");
 const header = document.querySelector(".header");
 const headerNav = document.querySelector(".header__nav");
 const goToTop = document.querySelector(".up__arr");
+const eduBtn = document.querySelectorAll(".education__btn");
+const eduContent = document.querySelectorAll(".education__content");
+const certificateImg = document.querySelectorAll(".certificate__img");
+const certificateContent = document.querySelectorAll(".certificate__content");
 
 // Link highlite style___
 const heandalLinks = function (e) {
@@ -110,3 +114,73 @@ const headerObserver = new IntersectionObserver(headerFun, {
 });
 
 headerObserver.observe(header);
+
+// REVEAL EDUCATION
+let btnCount = 0;
+eduContent[0].classList.remove("u__reveal_not");
+eduBtn[0].setAttribute("name", "remove-outline");
+eduBtn.forEach((btn, i) => {
+  btn.addEventListener("click", function (e) {
+    // Hide all other content
+    eduContent.forEach((e) => e.classList.add("u__reveal_not"));
+
+    // Menipulate all other btns
+    eduBtn.forEach((b) => b.setAttribute("name", "add-outline"));
+
+    // Menipulate Btn
+    e.target.setAttribute("name", "remove-outline");
+
+    // Reveal content
+    const targetParent = e.target.closest(".education__detail");
+    targetParent.children[1].classList.remove("u__reveal_not");
+  });
+});
+
+// Certificate carousel
+
+let carousel;
+
+const carouselFun = function () {
+  let imgCount = 0;
+  let carouselLength = certificateImg.length;
+  carousel = setInterval(() => {
+    if (imgCount < carouselLength - 1) {
+      certificateImg.forEach((img) => {
+        img.style.transition = "all .8s";
+        img.style.transform = `translateX(-${120 * (imgCount + 1)}%)`;
+      });
+
+      imgCount++;
+    } else {
+      imgCount = 0;
+      certificateImg.forEach((i) => {
+        i.style.transition = "all 0s";
+        i.style.transform = "translateX(0%)";
+      });
+    }
+  }, 3000);
+};
+carouselFun();
+
+// Hover condition on certificate
+certificateContent.forEach((content, index) => {
+  // MOUSE OVER CERTIFICATE
+  content.addEventListener("mouseover", (e) => {
+    // 1. stop carousel
+    clearInterval(carousel);
+
+    // 2.go to first column
+    certificateImg.forEach((i) => {
+      i.style.transform = `translateX(-${120 * index}%)`;
+    });
+
+    // 3. show current certificate
+    certificateImg[index].style.gridRow = "1 / 2";
+  });
+
+  // MOUSE OUT CONSITION
+
+  content.addEventListener("mouseout", (e) => {
+    carouselFun();
+  });
+});
