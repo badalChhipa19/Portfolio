@@ -2,7 +2,7 @@
 
 const headerLists = document.querySelector(".header__lists");
 const headergGreet = document.querySelectorAll(".header__greets");
-const section = document.querySelectorAll(".section");
+const sectionNode = document.querySelectorAll(".section");
 const skillGraph = document.querySelectorAll(".skill__graph");
 const header = document.querySelector(".header");
 const headerNav = document.querySelector(".header__nav");
@@ -11,8 +11,12 @@ const eduBtn = document.querySelectorAll(".education__btn");
 const eduContent = document.querySelectorAll(".education__content");
 const certificateImg = document.querySelectorAll(".certificate__img");
 const certificateContent = document.querySelectorAll(".certificate__content");
+const inputBox = document.querySelectorAll(".contact__input_box");
+const submitBtn = document.querySelector(".contact__submit");
 
-// Link highlite style___
+const [...section] = sectionNode;
+
+// Navigation Hover efficts////////////////////////////////////////////////////////////////
 const heandalLinks = function (e) {
   e.preventDefault();
   if (e.target.classList.contains("header__link")) {
@@ -31,14 +35,28 @@ const heandalLinks = function (e) {
 headerLists.addEventListener("mouseover", heandalLinks.bind(0.4));
 headerLists.addEventListener("mouseout", heandalLinks.bind(1));
 
-// Section disclose
+// Section disclose////////////////////////////////////////////////////////////////
 const reveal = function (entries) {
   const [entry] = entries;
   if (!entry.isIntersecting) return;
   entry.target.style.transition = "all .8s";
   entry.target.classList.remove("section__hidden");
+};
 
-  // Skill Design
+const sectionReveal = new IntersectionObserver(reveal, {
+  root: null,
+  threshold: 0.3,
+});
+
+section.forEach((e) => {
+  sectionReveal.observe(e);
+  e.classList.add("section__hidden");
+});
+
+// SKILL ANIMATION**************************************************************
+const skillAni = function (entries) {
+  const [entery] = entries;
+  if (!entery.isIntersecting) return;
   const startAnimation = function (x, y, z, a) {
     let startValue = 0;
     let b = setInterval(() => {
@@ -64,7 +82,7 @@ const reveal = function (entries) {
       let start = document.querySelector(`.skill__value--${num}`).textContent;
       let graph = document.querySelector(`.skill__graph--${num}`);
       let value = document.querySelector(`.skill__value--${num}`);
-      let time = 2500 / start;
+      let time = 1500 / start;
       startAnimation(start, graph, time, value);
       num++;
     } else {
@@ -73,17 +91,32 @@ const reveal = function (entries) {
   }, 10);
 };
 
-const sectionReveal = new IntersectionObserver(reveal, {
+const skillAnimation = new IntersectionObserver(skillAni, {
   root: null,
-  threshold: 0.3,
+  threshold: 0.5,
 });
 
-section.forEach((e) => {
-  sectionReveal.observe(e);
-  e.classList.add("section__hidden");
+skillAnimation.observe(section[1]);
+
+// Navigation go off in footer**************************************************************
+
+const navigationGoOff = function (entries) {
+  const [entery] = entries;
+  if (entery.isIntersecting) {
+    headerNav.style.position = "relative";
+  } else {
+    headerNav.style.position = "fixed";
+  }
+};
+
+const navOnFooter = new IntersectionObserver(navigationGoOff, {
+  root: null,
+  threshold: 0.2,
 });
 
-// NAVIGATIONS SHOWING
+navOnFooter.observe(section.at(-1));
+
+// NAVIGATIONS SHOWING////////////////////////////////////////////////////////////////
 const navHeight = headerNav.getBoundingClientRect().height;
 const headerFun = function (entries) {
   let [entery] = entries;
@@ -115,7 +148,7 @@ const headerObserver = new IntersectionObserver(headerFun, {
 
 headerObserver.observe(header);
 
-// REVEAL EDUCATION
+// REVEAL EDUCATION////////////////////////////////////////////////////////////////
 let btnCount = 0;
 eduContent[0].classList.remove("u__reveal_not");
 eduBtn[0].setAttribute("name", "remove-outline");
@@ -136,7 +169,7 @@ eduBtn.forEach((btn, i) => {
   });
 });
 
-// Certificate carousel
+// Certificate carousel////////////////////////////////////////////////////////////////
 
 let carousel;
 
@@ -182,5 +215,15 @@ certificateContent.forEach((content, index) => {
 
   content.addEventListener("mouseout", (e) => {
     carouselFun();
+  });
+});
+
+// Input validation////////////////////////////////////////////////////////////////
+
+let inputCount = 0;
+
+submitBtn.addEventListener("click", function () {
+  inputBox.forEach((input) => {
+    input.value.length < 3 || alert("Enter valid Details");
   });
 });
