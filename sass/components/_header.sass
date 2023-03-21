@@ -90,26 +90,41 @@
       transition: all .4s 
 
   // HEADER CONTENT-------------
-
   &__content
-    display: inline-block
-    width: max-content
-    color: $color-primary-3
+    text-transform: uppercase
     display: flex
     flex-direction: column
-    align-items: flex-start
-    font-size: 3rem
-    margin: 10vw 0 0 20vw
-
+    justify-content: center
+    padding: 10% 0 0 20%;
+    background-image: radial-gradient($color-primary-3, $color-primary-3, $color-primary-4)
+    background-clip: text
+    -webkit-background-clip: text
+    font-weight: 900
+    
     h1
+      color: transparent
       font-size: 8rem
-      position: relative
+
 
   &__greet
-    display: inline-block
+    color: transparent
+    font-size: 3rem
     margin-bottom: 3rem
     font-weight: 400
-    position: relative
 
-  &__specel
-    position: relative
+  &__sepcel
+    color: transparent
+    font-size: 3rem
+    margin-top: 1rem
+
+  &__about
+    display: inline-block
+    list-style: none
+    margin: 5% 0 0 20%
+    padding: 2%
+    color: $color-primary-4
+    font-weight: bold
+    width: max-content
+    backdrop-filter: grayscale(1) 
+    box-shadow: 0 0 8rem $color-grey-dark-2    
+
